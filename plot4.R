@@ -27,10 +27,10 @@ png(filename = "plot4.png",
     height = 480,
     units = "px")
 
-#Set plot pallette
+##Set plot pallette
 par(mfrow = c(1, 1))
 
-#sort and prepare df; than make ggplot
+##sort and prepare df; than make ggplot
 NEI %>% 
    select(year, Emissions, SCC) %>%
    rename(Year = year) %>%
@@ -45,5 +45,5 @@ NEI %>%
         title ="Total Coal Combustion PM2.5 Emissions for the US",
         subtitle = "Sum of All Yearly Coal Combustion-Related Sources") 
 
-#Turn off png device
+##Turn off png device
 dev.off()

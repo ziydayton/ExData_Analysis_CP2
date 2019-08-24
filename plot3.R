@@ -17,16 +17,16 @@ NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
 ##Generate plot
-#Ensuring png is 480x480pixels - Although defealt; included for specificity
+##Ensuring png is 480x480pixels - Although defealt; included for specificity
 png(filename = "plot3.png",
     width = 480,
     height = 480,
     units = "px")
 
-#Set plot pallette
+##Set plot pallette
 par(mfrow = c(1, 1))
 
-#sort and prepare df; than make ggplot
+##sort and prepare df; than make ggplot
 NEI %>% 
    select(year, Emissions, type, fips) %>%
    filter(fips == 24510) %>%
@@ -42,5 +42,5 @@ ggplot(aes(x = Year, y = Total_Emissions)) +
         subtitle = "By Sum for Each Type of Source",
         color = "Source Type") 
 
-#Turn off png device
+##Turn off png device
 dev.off()

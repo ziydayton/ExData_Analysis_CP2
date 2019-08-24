@@ -30,10 +30,10 @@ png(filename = "plot2.png",
     height = 480,
     units = "px")
 
-#Set plot pallette
+##Set plot pallette
 par(mfrow = c(1, 1))
 
-#Create plot
+##Create plot
 plot(x = df$Year,
      y = df$Total_Emissions,
      type = "b",
@@ -42,5 +42,5 @@ plot(x = df$Year,
      ylab = "Total PM2.5 Emissions [tons]",
      ylim = c(0, max(df$Total_Emissions, na.rm = TRUE)))
 
-#Turn off png device
+##Turn off png device
 dev.off()

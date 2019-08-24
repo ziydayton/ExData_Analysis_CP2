@@ -20,17 +20,16 @@ SCC <- readRDS("Source_Classification_Code.rds")
 MVEm <- SCC[grep("Mobile", SCC$EI.Sector), ]
 
 ##Generate plot
-#Ensuring png is 480x480pixels - Although defealt; included for specificity
+##Ensuring png is 480x480pixels - Although defealt; included for specificity
 png(filename = "plot5.png",
     width = 480,
     height = 480,
     units = "px")
 
-#Set plot pallette
+##Set plot pallette
 par(mfrow = c(1, 1))
 
-#sort and prepare df; than make ggplot
-#emissions from motor vehicle sources changed from 1999–2008 in Baltimore City?
+##sort and prepare df; than make ggplot
 NEI %>% 
    select(year, Emissions, SCC, fips) %>%
    filter(fips == 24510) %>%
@@ -46,5 +45,5 @@ NEI %>%
         title ="Motor Vehicle PM2.5 Emissions for Baltimore City, MD",
         subtitle = "Yearly Sum of All  Motor Vehicle-Related Sources") 
 
-#Turn off png device
+##Turn off png device
 dev.off()

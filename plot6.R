@@ -26,10 +26,10 @@ png(filename = "plot6.png",
     height = 480,
     units = "px")
 
-#Set plot pallette
+##Set plot pallette
 par(mfrow = c(1, 1))
 
-#sort and prepare df; than make ggplot
+##sort and prepare df; than make ggplot
 NEI %>% 
    select(year, Emissions, SCC, fips) %>%
    filter(fips %in% c("24510", "06037")) %>%
@@ -48,5 +48,5 @@ NEI %>%
                         labels = c("06037" = "Los Angeles County, CA", 
                                    "24510" = "Baltimore City, MD"))
 
-#Turn off png device
+##Turn off png device
 dev.off()
